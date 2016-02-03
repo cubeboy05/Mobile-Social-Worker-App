@@ -1,0 +1,250 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Social Care Budget App</title>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
+        <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+        <link rel="stylesheet" href="styles.css" />
+        <script src="script2.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/> 
+    </head>
+    <body>
+
+        <!--Start of Log In Page-->
+        <div data-role="page" id="loginForm" data-theme="e" data-add-back-btn="false">
+            <header data-role="header">
+                 <h1>Log In</h1> 
+            </header>
+
+            <!--OLD FORM-->
+            <form id="form1" name="form1" method="GET" action="http://softwarehuttest.x10.mx/public/account/login/">
+                <label for="id">Username   </label>
+                <input type="text" name="id" id="id" />
+
+                <label for="password">Password   </label>
+                <input type="password" name="password" id="password" />
+                
+                <input type="hidden" name="rank" id="rank" value="1">
+
+                <input type="submit" name="submit" value="Login"/>    
+            </form>
+            
+            <footer data-role="footer" data-position="fixed">
+                <h1></h1>
+            </footer>
+        </div>
+        <!--End of Log In Page-->
+
+        <!--Start of Home Page-->
+        <div data-role="page" id="home" data-theme="e" data-add-back-btn="false">
+            <header data-role="header">
+                    <h1>Budget Planner</h1>
+            </header>
+            <article data-role="content">
+                <ul data-role="listview" >
+                    <li>
+                        <a href="#benefits" data-transition="slidefade">
+                            <h1>Benefits</h1>
+                            <img src="img/orange-icon.png" alt="benefits">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#bills" data-transition="slidefade">
+                            <h1>Future Bills</h1>
+                            <img src="img/green-icon.png" alt="bills">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#unpaidBills" data-transition="slidefade">
+                            <h1>Unpaid Bills</h1>
+                            <img src="img/yellow-icon.png" alt="unpaid">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#expense" data-transition="slidefade">
+                            <h1>Expense</h1>
+                            <img src="img/blue-icon.png" alt="expenditure">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#earnings" data-transition="slidefade">
+                            <h1>Earnings</h1>
+                            <img src="img/purple-icon.png" alt="earnings">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#budget" data-transition="slidefade">
+                            <h1>Budget</h1>
+                            <img src="img/red-icon.png" alt="Budget">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#transaction" data-transition="slidefade">
+                            <h1>Transaction</h1>
+                            <img src="img/green-icon.png" alt="Transaction">
+                        </a>
+                    </li>
+                </ul>
+            </article>
+            <footer data-role="footer" data-position="fixed">
+                    <h1></h1>
+            </footer>
+        </div>
+        <!--End of Home page-->
+
+        <!--Start of Benefits Page-->
+        <div data-role="page" id="benefits" data-theme="e">
+            <header data-role="header">
+            <h1>Benefits</h1>   
+        </header>
+        <article data-role="content" >
+            <div data-role="collapsible-set" id="benefitsList">
+                <!--will fill up with info from database-->
+            </div>
+        </article>
+        <footer data-role="footer" data-position="fixed">
+            <h1></h1>
+        </footer>
+        </div>
+        <!--End of benefits page-->
+
+        <!--Start of Future Bills Page-->
+        <div data-role="page" id="bills" data-theme="e">
+            <header data-role="header">
+            <h1>Future Bills</h1>    
+        </header>
+        <article data-role="content">
+            <div data-role="collapsible-set" id="billsList">
+                <!--wil fill up with info from database-->
+            </div>
+        </article>
+        <footer data-role="footer" data-position="fixed">
+                <h1></h1>
+        </footer>
+        </div>
+        <!--End of bills page-->
+
+        <!--Start of Expense page-->
+        <div data-role="page" id="expense" data-theme="e"> 
+            <header data-role="header">
+                <h1>Expenditure</h1>    
+            </header>
+
+                <div>
+                    <form id="list_form">  
+
+                        <fieldset>
+                            <select name="payment" id="payment" data-native-menu="false">
+                              <option>cash</option>
+                              <option value="cash">cash</option>
+                              <option value="bank">bank</option>
+                            </select>
+                        </fieldset>
+
+                        <div class="text_field">
+                            <input type="text" size="55" id="list_description"/>
+                        </div>
+
+                        <div class="button_right" id="button-right">
+                            <input type="submit" id="add_list" value="Add"/>
+                        </div>
+
+                    </form>
+                </div>
+
+                <div id="list1"></div>
+
+                <footer data-role="footer" data-position="fixed">
+                    <h1></h1>
+                </footer>
+        </div>
+        <!--End of Expense Page-->
+
+        <!--Start of Earnings page-->
+        <div data-role="page" id="earnings" data-theme="e"> 
+            <header data-role="header">
+                <h1>Earnings</h1>    
+            </header>
+
+                <div>
+                    <form id="list_form1">  
+
+                        <fieldset>
+                            <select name="payment1" id="payment1" data-native-menu="false">
+                              <option>cash</option>
+                              <option value="cash">cash</option>
+                              <option value="bank">bank</option>
+                            </select>
+                        </fieldset>
+
+                        <div class="text_field">
+                            <input type="text" size="55" id="list_description1"/>
+                        </div>
+
+                        <div class="button_right" id="button-right">
+                            <input type="submit" id="add_list1" value="Add"/>
+                        </div>
+
+                    </form>
+                </div>
+
+                <div  id="list2"></div>
+
+                <footer data-role="footer" data-position="fixed">
+                    <h1></h1>
+                </footer>
+        </div>
+        <!--End of Earnings Page-->
+
+        <!--Start of Unpaid Bills Page-->
+        <div data-role="page" id="unpaidBills" data-theme="e">
+            <header data-role="header">
+            <h1>Unpaid Bills</h1>    
+        </header>
+        <article data-role="content">
+            <div data-role="collapsible-set" id="unpaidList">
+                <!--wil fill up with info from database-->
+            </div>
+        </article>
+        <footer data-role="footer" data-position="fixed">
+                <h1></h1>
+        </footer>
+        </div>
+        <!--End of Unpaid bills page-->
+
+        <!--Start of Budget Page-->
+        <div data-role="page" id="budget" data-theme="e">
+            <header data-role="header">
+            <h1>Budget</h1>    
+        </header>
+        <article data-role="content">
+            <div data-role="collapsible" data-collapsed="false" id="budgetList">
+                <!--wil fill up with info from database-->
+            </div>
+        </article>
+        <footer data-role="footer" data-position="fixed">
+                <h1></h1>
+        </footer>
+        </div>
+        <!--End of budget page-->
+
+        <!--Start of transaction Page-->
+        <div data-role="page" id="transaction" data-theme="e">
+            <header data-role="header">
+            <h1>Transaction</h1>    
+        </header>
+        <article data-role="content">
+            <div data-role="collapsible" data-collapsed="false" id="transactionList">
+                <!--wil fill up with info from database-->
+            </div>
+        </article>
+        <footer data-role="footer" data-position="fixed">
+                <h1></h1>
+        </footer>
+        </div>
+        <!--End of transaction page-->
+
+    </body>
+</html>
